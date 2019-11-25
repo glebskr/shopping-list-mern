@@ -8,7 +8,7 @@ const context = path.resolve(__dirname)
 module.exports = {
    
     mode: "production",
-    entry: '.tmp/',
+    entry: './index.tsx',
     output: {
         path: path.join(__dirname, '/dist'),
         filename: "index-bundle.js"
