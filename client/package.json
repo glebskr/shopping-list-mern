@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://dashboard.heroku.com/apps/thawing-retreat-33073"
 }
