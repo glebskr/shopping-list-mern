@@ -27,7 +27,13 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: 'ts-loader'
+                        loader: 'typecript-awesome-loader',
+                        options: {
+                            useBabel: true,
+                            transpileOnly: true,
+                            useTranspileModule: false,
+                            sourceMap: false,
+                        }
                     }
                 ]
             },
