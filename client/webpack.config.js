@@ -4,9 +4,9 @@ const path = require("path");
 const context = path.resolve(__dirname)
 
 module.exports = {
-    context: context,
+   
     mode: "production",
-    entry: "/src/index.tsx",
+    entry: "./src/index.tsx",
     output: {
         path: path.join(__dirname, '/dist'),
         filename: "index-bundle.js"
