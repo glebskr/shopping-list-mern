@@ -30,7 +30,7 @@ const ShoppingList: React.FC = ({item ,getItems, deleteItem} : any) => {
       
       <ListGroup>
         <TransitionGroup className="shopping-list">
-          {items ? items.map(({ _id, name } : IItem) => (
+          {Array.isArray(items) ? items.map(({ _id, name } : IItem) => (
             <CSSTransition key={_id} timeout={500} classNames="fade">
               <ListGroupItem>
                 <Button
