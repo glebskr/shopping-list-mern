@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run clean && webpack --config ./webpack.config.js ",
+    "build": "npm run clean && webpack --config ./webpack.config.js; tsc --project=tsconfig.json ",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
