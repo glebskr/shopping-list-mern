@@ -9,6 +9,11 @@ module.exports = {
    
     mode: "production",
     entry: './index.tsx',
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     output: {
         path: path.join(__dirname, '/dist'),
         filename: "index-bundle.js"
