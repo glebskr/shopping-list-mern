@@ -3,6 +3,24 @@ const path = require("path");
 
 const context = path.resolve(__dirname)
 
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+console.log(__dirname)
+
+
 module.exports = {
    
     mode: "production",
