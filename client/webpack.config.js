@@ -14,7 +14,6 @@ module.exports = {
         filename: "index-bundle.js"
       },
     // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -28,7 +27,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: 'awesome-typescript-loader'
+                        loader: 'ts-loader'
                     }
                 ]
             },
