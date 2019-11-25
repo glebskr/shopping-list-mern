@@ -8,11 +8,10 @@
         "jsx": "react",
         "lib": ["dom", "es6"],
         "noEmit": true,
-        "compilerOptions": {
-            "types" : [
+        "types" : [
                 "react",
                 "react-dom"
             ]
-        }
+        
     }
 }
