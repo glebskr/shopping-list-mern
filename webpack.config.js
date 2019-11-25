@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
+    
     mode: "production",
     entry: "./client/src/index.tsx",
     output: {
@@ -23,7 +24,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: 'ts-loader'
+                        loader: 'awesome-typescript-loader'
                     }
                 ]
             },
