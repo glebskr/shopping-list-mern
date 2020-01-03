@@ -15,7 +15,7 @@ import uuid from "uuid";
 import { connect } from "react-redux";
 import { addItem } from "../actions/itemActions";
 
-const ItemModal = ({addItem }:any) => {
+const ItemModal = ({addItem, isAuth }:any) => {
   const [modal, changeModal] = useState(false);
   const [name, changeName] = useState("");
 
@@ -41,9 +41,10 @@ const ItemModal = ({addItem }:any) => {
     
   return (
     <div>
-      <Button color="dark" style={{ marginBottom: "2rem" }} onClick={toggle}>
+      {isAuth ?<Button color="dark" style={{ marginBottom: "2rem" }} onClick={toggle}>
         Add Item
-      </Button>
+      </Button> : <h4 className='mb-3 ml-4'> Please Login to manage items</h4>}
+      
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}> Add To Shopping List</ModalHeader>
         <ModalBody>
@@ -64,6 +65,7 @@ const ItemModal = ({addItem }:any) => {
 const mapStateToProps = (state : any) => {
     return {
         items: state.items,
+        isAuth: state.auth.isAuthenticated
     }
 }
 

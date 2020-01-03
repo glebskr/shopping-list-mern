@@ -7,7 +7,7 @@ interface IAction {
 
 
 const initialState = {
-    items: [{_id: 228}],
+    items: [],
     loading: false
 }
 

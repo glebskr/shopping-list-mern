@@ -10,14 +10,19 @@ interface IItem {
   name: string;
 }
 
-type ItemType = IItem 
 
-const ShoppingList: React.FC = ({item ,getItems, deleteItem} : any) => {
+
+const ShoppingList: React.FC = ({item ,getItems, deleteItem, isAuth} : any) => {
   // const [items, updateItems] = useState<ItemType[]>([]);
 
+  const [rerender, setRerender] = useState(false)
+  
   useEffect(() => {
+    console.log(item.items.length)
     getItems()
-  }, [item ? item.length : null])
+  }, [])
+    
+ 
 
   const onDeleteClick = (id: string) => {
     console.log('asdadasd')
@@ -25,6 +30,7 @@ const ShoppingList: React.FC = ({item ,getItems, deleteItem} : any) => {
   }
 
   const items = item.items
+  
   return (
     <Container>
       
@@ -33,14 +39,14 @@ const ShoppingList: React.FC = ({item ,getItems, deleteItem} : any) => {
           {Array.isArray(items) ? items.map(({ _id, name } : IItem) => (
             <CSSTransition key={_id} timeout={500} classNames="fade">
               <ListGroupItem>
-                <Button
+               {isAuth ?  <Button
                   className="remove-btn"
                   color="danger"
                   size="sm"
                   onClick={()=> onDeleteClick(_id)}
                 >
                   &times;
-                </Button>
+                </Button> : null}
                 {name}
               </ListGroupItem>
             </CSSTransition>
@@ -52,7 +58,8 @@ const ShoppingList: React.FC = ({item ,getItems, deleteItem} : any) => {
 };
 
 const mapStateToProps = (state: any) => ({
-  item: state.item
+  item: state.item,
+  isAuth: state.auth.isAuthenticated
 })
 
 export default connect(mapStateToProps, {getItems, deleteItem})(ShoppingList);
