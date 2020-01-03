@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+import RegisterModal from './auth/RegisterModal'
 import {
     Collapse,
     Navbar,
@@ -31,9 +31,7 @@ const AppNavBar: React.FC = () => {
                     <Collapse isOpen={isOpen} navbar >
                         <Nav clasName="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="https://github.com">
-                                    Github    
-                                </NavLink>                                
+                                <RegisterModal />                              
                             </NavItem>    
                         </Nav>   
                     </Collapse>

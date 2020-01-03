@@ -2,7 +2,7 @@
     "compilerOptions": {
       "outDir": "./build", // target for compiled files
       "allowJs": true, // include js files
-      "checkJs": true, // typecheck js files
+      "checkJs": false, // typecheck js files
       "declaration": false, // don't emit declarations
       "forceConsistentCasingInFileNames": true,
       "importHelpers": true, // importing helper functions from tslib

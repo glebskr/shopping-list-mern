@@ -63,7 +63,7 @@ const ItemModal = ({addItem }:any) => {
 
 const mapStateToProps = (state : any) => {
     return {
-        items: state.items
+        items: state.items,
     }
 }
 

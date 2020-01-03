@@ -8,14 +8,14 @@ const context = path.resolve(__dirname)
 module.exports = {
    
     mode: "production",
-    entry: './index.tsx',
+    entry: './src/index.tsx',
     performance: {
         hints: false,
         maxEntrypointSize: 512000,
         maxAssetSize: 512000
     },
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, './client/public'),
         filename: "index-bundle.js"
       },
     // Enable sourcemaps for debugging webpack's output.
@@ -34,7 +34,7 @@ module.exports = {
                     {
                         loader: 'awesome-typescript-loader',
                         options: {
-                            useBabel: true,
+
                             transpileOnly: true,
                             useTranspileModule: false,
                             sourceMap: false,
@@ -42,6 +42,27 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+            
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            "@babel/preset-env",
+                            "@babel/preset-react"
+                        ],
+                        plugins: [
+                            
+                            "@babel/plugin-proposal-class-properties"
+                        ]
+                    }
+              
+            },
+                
+              }
+            ,
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {
                 enforce: "pre",

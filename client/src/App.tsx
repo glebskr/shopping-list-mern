@@ -8,8 +8,18 @@ import "./App.css";
 import { Container } from "reactstrap";
 import { Provider } from "react-redux";
 import store from "./store";
+import {loadUser} from './actions/authActions'
 
-const App: React.FC = () => {
+
+
+class App extends React.Component  {
+
+  componentDidMount() {
+    
+    store.dispatch(loadUser());
+  }
+
+  render() {
   return (
     <Provider store={store}>
       <div className="App">
@@ -22,5 +32,6 @@ const App: React.FC = () => {
     </Provider>
   );
 };
+}
 
 export default App;

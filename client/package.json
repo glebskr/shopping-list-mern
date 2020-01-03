@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run clean && webpack --config ./webpack.config.js ",
+    "build": "webpack --mode development",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://dashboard.heroku.com/apps/thawing-retreat-33073"
+  "proxy": "http://localhost:5000"
 }

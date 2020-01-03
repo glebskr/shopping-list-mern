@@ -1,21 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": "./", // enables relative imports to root
-    "paths": {
-      "@src/*": [
-        "src/*"
-      ]
-    },
-    "outDir": "out/", // target for compiled files
-    "allowJs": true, // include js files
-    "checkJs": true, // typecheck js files
-    "declaration": false, // don't emit declarations
+    "baseUrl": "./",
+    "outDir": "out/",
+    "allowJs": true,
+    "checkJs": false,
+    "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true, // importing helper functions from tslib
-    "noEmitHelpers": true, // disable emitting inline helper functions
-    "jsx": "react", // process JSX
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "jsx": "react",
     "lib": [
       "dom",
       "es2016",
@@ -23,9 +18,9 @@
     ],
     "allowSyntheticDefaultImports": true,
     "target": "es6",
-    "module": "es6",
+    "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true, // no emit in dev, only when bundling for prod, which is usually handled by bundlers like webpack / fuse-box / jspm
+    "noEmit": true,
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
@@ -34,13 +29,18 @@
     "strictNullChecks": false,
     "pretty": true,
     "removeComments": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "node_modules",
     "dist"
+  ],
+  "include": [
+    "src"
   ]
 }
